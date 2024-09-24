@@ -1,0 +1,25 @@
+## All proprietary firmware from this list, unless pinned and noted otherwise,
+## are from NB1 (00WW_5_16A).
+
+abl.img;AB
+bluetooth.img;AB
+cda.img;AB
+cmnlib.img;AB
+cmnlib64.img;AB
+devcfg.img;AB
+dsp.img;AB
+hidden.img;AB
+hyp.img;AB
+keymaster.img;AB
+mdtp.img;AB
+mdtpsecapp.img;AB
+nvdef.img;AB
+pmic.img;AB
+rpm.img;AB
+splash.img;AB
+systeminfo.img;AB
+tz.img;AB
+xbl.img;AB
+
+# Modem - with A1N_sprout Q WLAN firmware - 00WW_5_14L
+modem.img;AB
