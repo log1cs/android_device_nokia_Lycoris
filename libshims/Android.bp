@@ -6,16 +6,6 @@
 
 // Fingerprint
 cc_library_shared {
-    name: "libshim_binder",
-    proprietary: true,
-    defaults: ["hidl_defaults"],
-    compile_multilib: "64",
-    srcs: [
-        "PermissionCache.cpp",
-    ],
-}
-
-cc_library_shared {
     name: "libfakelogprint",
     srcs: ["libfakelogprint.cpp"],
     shared_libs: ["liblog"],

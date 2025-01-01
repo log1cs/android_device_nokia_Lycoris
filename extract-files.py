@@ -38,23 +38,29 @@ blob_fixups: blob_fixups_user_type = {
 	.binary_regex_replace(b'system/lib/sensors.rangefinder.so', b'vendor/lib/sensors.rangefinder.so'),
     # Patch gx_fpd for VNDK support
     'vendor/bin/gx_fpd': blob_fixup()
-	.patchelf_version('0_17_2')
+	.patchelf_version('0_18')
 	.remove_needed('libunwind.so')
 	.remove_needed('libbacktrace.so')
 	.add_needed('liblog.so')
-	.add_needed('libshim_binder.so')
+	.add_needed('libbinder_shim.so')
 	.add_needed('libfakelogprint.so')
 	.replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     'vendor/lib64/hw/fingerprint.msm8998.so': blob_fixup()
-        .patchelf_version('0_17_2')
+        .patchelf_version('0_18')
         .add_needed('libfakelogprint.so')
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
-    ('vendor/lib64/libfp_client.so', 'vendor/lib64/libfpjni.so', 'vendor/lib64/libfpservice.so'): blob_fixup()
-        .patchelf_version('0_17_2')
+    'vendor/lib64/libfp_client.so': blob_fixup()
+        .patchelf_version('0_18')
+	.add_needed('liblog.so')
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
+    'vendor/lib64/libfpservice.so': blob_fixup()
+        .patchelf_version('0_18')
+        .add_needed('libbinder_shim.so')
+        .add_needed('liblog.so')
 	.replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     # Hexedit gxfingerprint to load Goodix firmware from /vendor/firmware/
     'vendor/lib64/hw/gxfingerprint.default.so': blob_fixup()
-        .patchelf_version('0_17_2')
+        .patchelf_version('0_18')
         .add_needed('libfakelogprint.so')
         .binary_regex_replace(b'/system/etc/firmware', b'/vendor/firmware\x00\x00\x00\x00')
 	.replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
