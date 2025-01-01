@@ -46,9 +46,14 @@ blob_fixups: blob_fixups_user_type = {
         .patchelf_version('0_17_2')
         .add_needed('libfakelogprint.so')
         .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
-    ('vendor/lib64/libfp_client.so', 'vendor/lib64/libfpjni.so', 'vendor/lib64/libfpservice.so'): blob_fixup()
+    ('vendor/lib64/libfp_client.so', 'vendor/lib64/libfpservice.so'): blob_fixup()
         .patchelf_version('0_17_2')
 	.replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
+    'vendor/lib64/libfpjni.so': blob_fixup()
+	.patchelf_version('0_17_2')
+	.remove_needed('libandroid_runtime.so')
+	.remove_needed('libnativehelper.so')
+        .replace_needed('libstdc++.so', 'libstdc++_vendor.so'),
     # Hexedit gxfingerprint to load Goodix firmware from /vendor/firmware/
     'vendor/lib64/hw/gxfingerprint.default.so': blob_fixup()
         .patchelf_version('0_17_2')
