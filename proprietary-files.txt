@@ -391,13 +391,11 @@ vendor/firmware/leia_pm4_470.fw
 
 # Fingerprint
 vendor/bin/gx_fpd
-vendor/bin/qfp-daemon
 vendor/lib64/hw/fingerprint.default.so:vendor/lib64/hw/fingerprint.msm8998.so
 vendor/lib64/hw/gxfingerprint.default.so
 vendor/lib64/libfp_client.so|d04b25d43114dc9c5c8e4803a2ebaca156a828a4
 vendor/lib64/libfpjni.so
 vendor/lib64/libfpservice.so
-vendor/lib64/libqfp-service.so
 
 # Fingerprint (Firmware)
 system/etc/firmware/goodixfp.b00:vendor/firmware/goodixfp.b00
