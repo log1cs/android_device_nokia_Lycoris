@@ -24,8 +24,16 @@ namespace_imports = [
     'vendor/nokia/msm8998-common',
 ]
 
+def lib_fixup_vendor_suffix(lib: str, partition: str, *args, **kwargs):
+    return f'{lib}_{partition}' if partition == 'vendor' else None
+
 lib_fixups: lib_fixups_user_type = {
     **lib_fixups,
+    (
+    ): lib_fixup_vendor_suffix,
+    (
+	'libmm-qcamera',
+    ): lib_fixup_remove,
 }
 
 blob_fixups: blob_fixups_user_type = {
