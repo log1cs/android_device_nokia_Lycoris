@@ -3,3 +3,6 @@ persist.vendor.sys.exif.model="Nokia 8"
 
 # Fingerprint
 sys.gxfp.lv=1
+
+# Sensors
+persist.vendor.debug.sensors.hal=i

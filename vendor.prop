@@ -6,3 +6,7 @@ qemu.hw.mainkeys=1
 
 # SOC properties
 ro.soc.model=MSM8998
+
+# Sensors
+debug.vendor.sns.daemon=i
+debug.vendor.sns.libsensor1=e
