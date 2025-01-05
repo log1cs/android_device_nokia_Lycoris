@@ -461,6 +461,9 @@ vendor/lib64/libgcs-ipc.so
 vendor/lib64/libgcs-osal.so
 vendor/lib64/libgcs.so
 
+# NFC firmware
+vendor/firmware/libpn548ad_fw.so:vendor/lib64/libpn548ad_fw.so
+
 # Panel calibration
 vendor/bin/qdcm_calib_data_JDI_Dual_nt36850_cmd_mode_dsi_panel_without_DSC.xml
 vendor/bin/qdcm_calib_data_LGD_Dual_DSI_cmd_mode_panel_without_DSC.xml
