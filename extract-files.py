@@ -44,6 +44,10 @@ blob_fixups: blob_fixups_user_type = {
     'vendor/lib/libmmcamera2_stats_modules.so': blob_fixup()
 	.binary_regex_replace(b'system/lib64/sensors.rangefinder.so', b'vendor/lib64/sensors.rangefinder.so')
 	.binary_regex_replace(b'system/lib/sensors.rangefinder.so', b'vendor/lib/sensors.rangefinder.so'),
+    ('vendor/lib/libmmcamera_faceproc.so', 'vendor/lib/libmmcamera_faceproc2.so'): blob_fixup()
+        .clear_symbol_version('__aeabi_memcpy')
+        .clear_symbol_version('__aeabi_memset')
+        .clear_symbol_version('__gnu_Unwind_Find_exidx'),
     # Patch gx_fpd for VNDK support
     'vendor/bin/gx_fpd': blob_fixup()
 	.patchelf_version('0_18')
