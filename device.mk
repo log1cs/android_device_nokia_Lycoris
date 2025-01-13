@@ -73,8 +73,7 @@ PRODUCT_PACKAGES += \
     init.nb1.target.rc \
     init.fih.modemconfig.rc \
     init.fih.modemconfig.sh \
-    init.fih.poweroff_charging.rc \
-    fstab.qcom
+    init.fih.poweroff_charging.rc
 
 # Wi-Fi
 PRODUCT_PACKAGES += \
