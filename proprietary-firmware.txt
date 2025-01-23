@@ -8,7 +8,6 @@ cmnlib.img;AB
 cmnlib64.img;AB
 devcfg.img;AB
 dsp.img;AB
-hidden.img;AB
 hyp.img;AB
 keymaster.img;AB
 mdtp.img;AB

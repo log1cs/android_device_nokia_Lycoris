@@ -6,6 +6,15 @@
 
 DEVICE_PATH := device/nokia/NB1
 
+# Retrofit
+PRODUCT_PACKAGES += check_dynamic_partitions
+
+AB_OTA_POSTINSTALL_CONFIG += \
+    RUN_POSTINSTALL_product=true \
+    POSTINSTALL_PATH_product=bin/check_dynamic_partitions \
+    FILESYSTEM_TYPE_product=ext4 \
+    POSTINSTALL_OPTIONAL_product=false
+
 # Inherit from the common device configuration.
 TARGET_NOKIA_PLATFORM := msm8998
 $(call inherit-product, device/nokia/msm8998-common/msm8998-common.mk)
@@ -35,6 +44,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     camera.msm8998 \
     libgui_vendor:32
+
+# Dynamic partitions
+PRODUCT_USE_DYNAMIC_PARTITIONS := true
+PRODUCT_RETROFIT_DYNAMIC_PARTITIONS := true
 
 # Hotword Enrollment
 PRODUCT_COPY_FILES += \
@@ -73,8 +86,11 @@ PRODUCT_PACKAGES += \
     init.nb1.target.rc \
     init.fih.modemconfig.rc \
     init.fih.modemconfig.sh \
-    init.fih.poweroff_charging.rc \
-    fstab.qcom
+    init.fih.poweroff_charging.rc
+
+PRODUCT_COPY_FILES += \
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR)/etc/fstab.qcom \
+    $(DEVICE_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.qcom
 
 # Wi-Fi
 PRODUCT_PACKAGES += \

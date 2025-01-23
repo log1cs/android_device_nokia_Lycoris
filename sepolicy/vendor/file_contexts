@@ -10,3 +10,7 @@
 /sys/kernel/ois_control/gyro_cal		              u:object_r:sysfs_ois:s0
 /sys/kernel/range/cal_data		                      u:object_r:sysfs_ois:s0
 /sys/kernel/range/enable_ps_sensor		              u:object_r:sysfs_range:s0
+
+# Partitions (A/B)
+/dev/block/platform/soc/1da4000\.ufshc/by-name/system_[ab]                     u:object_r:system_block_device:s0
+/dev/block/platform/soc/1da4000\.ufshc/by-name/hidden_[ab]                     u:object_r:system_block_device:s0
