@@ -22,4 +22,4 @@ tz.img;AB
 xbl.img;AB
 
 # Modem - with A1N_sprout Q WLAN firmware - 00WW_5_14L
-modem.img;AB
+modem.img;AB|d7ca8cdf46a702d5f844581504ccae9c965e7190
