@@ -19,6 +19,7 @@ TARGET_BOARD_PLATFORM := msm8998
 PRODUCT_FULL_TREBLE_OVERRIDE := true
 
 # Partitions
+BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE := true
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 TARGET_COPY_OUT_SYSTEM := system
 TARGET_COPY_OUT_SYSTEM_EXT := system_ext
