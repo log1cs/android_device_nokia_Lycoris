@@ -1,0 +1,42 @@
+//
+// SPDX-FileCopyrightText: 2024 The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Init scripts
+
+sh_binary {
+	name: "init.fih.modemconfig.sh",
+	src: "init.fih.modemconfig.sh",
+	vendor: true,
+}
+
+// Init configuration files
+
+prebuilt_etc {
+	name: "init.nb1.camera.rc",
+	src: "init.nb1.camera.rc",
+	sub_dir: "init/hw",
+	vendor: true,
+}
+
+prebuilt_etc {
+        name: "init.nb1.target.rc",
+        src: "init.nb1.target.rc",
+        sub_dir: "init/hw",
+        vendor: true,
+}
+
+prebuilt_etc {
+        name: "init.fih.poweroff_charging.rc",
+        src: "init.fih.poweroff_charging.rc",
+        sub_dir: "init/hw",
+        vendor: true,
+}
+
+prebuilt_etc {
+        name: "init.fih.modemconfig.rc",
+        src: "init.fih.modemconfig.rc",
+        sub_dir: "init/hw",
+        vendor: true,
+}
