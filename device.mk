@@ -60,10 +60,6 @@ PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-service
 
 # NFC
-PRODUCT_PACKAGES += \
-    NfcNci \
-    SecureElement
-
 PRODUCT_COPY_FILES += \
     $(DEVICE_PATH)/configs/nfc/libnfc-nci.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nci.conf \
     $(DEVICE_PATH)/configs/nfc/libnfc-nxp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/libnfc-nxp.conf
@@ -75,10 +71,6 @@ DEVICE_PACKAGE_OVERLAYS += \
 # Soong
 PRODUCT_SOONG_NAMESPACES += \
     $(DEVICE_PATH)
-
-# Shims
-PRODUCT_PACKAGES += \
-    libfakelogprint
 
 # Ramdisk
 PRODUCT_PACKAGES += \
