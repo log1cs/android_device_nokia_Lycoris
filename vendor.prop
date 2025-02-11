@@ -1,6 +1,9 @@
 # Bluetooth
 bluetooth.device.default_name=Nokia 8
 
+# Fingerprint
+persist.vendor.fingerprint.type=home
+
 # Navigation bar
 qemu.hw.mainkeys=1
 
